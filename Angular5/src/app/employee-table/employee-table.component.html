@@ -1,0 +1,42 @@
+<div>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Birth date</th>
+            <th>Gender</th>
+            <th>Hire date</th>
+            <th></th>
+        </tr>
+
+        <tr *ngFor="let item of data._embedded.employees">
+            <td>{{item.id}}</td>
+            <td>{{item.firstName}}</td>
+            <td>{{item.lastName}}</td>
+            <td>{{item.birthDate}}</td>
+            <td>{{item.gender}}</td>
+            <td>{{item.hireDate}}</td>
+            <th><button type="button" (click)="deleteEmployee(item.id)">Delete</button></th>
+        </tr>
+
+        
+    </table>
+
+    <div>
+        
+        <button type="button" (click)="firstPage()">First</button>
+        <button type="button" (click)="changePage(-1)" [disabled]="page == 0">Previous</button>
+        <span> -- {{page}} -- </span>
+        <button type="button" (click)='changePage(1)'>Next</button>
+        <button type="button" (click)="lastPage()">Last</button>
+    </div>
+    <br>
+
+    <div>
+        <form action="">
+            <label for=""><input type="text" name="" id=""></label>
+        </form>
+    </div>
+    <button>Add Employee</button>
+</div>
